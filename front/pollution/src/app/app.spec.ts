@@ -7,6 +7,8 @@ import { PollutionService } from './services/pollution.service';
 
 describe('App', () => {
   const mockPollutionService = {
+    getApiUrl: () => 'http://localhost:3000/api',
+    setApiUrl: () => {},
     getPollutions: () => of([
       { id: 1, ville: 'Paris', polluant: 'PM2.5', valeur: 28.5, date: '2026-10-18', description: 'Test' }
     ])
@@ -32,6 +34,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain("Surveillance de la Qualité de l'Air");
+    expect(compiled.querySelector('h1')?.textContent).toContain("Relevés de Pollution");
   });
 });
