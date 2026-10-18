@@ -1,0 +1,111 @@
+<div class="pollution-container">
+  <!-- En-tête pédagogique -->
+  <header class="app-header">
+    <div class="header-icon">🌍</div>
+    <div>
+      <h1>Surveillance de la Qualité de l'Air</h1>
+      <p class="subtitle">Consommation d'une API REST avec Angular (Observable &rarr; Signal)</p>
+    </div>
+  </header>
+
+  <!-- Note pédagogique pour les étudiants -->
+  <div class="pedagogical-banner">
+    <div class="banner-title">
+      <span class="badge-tech">Concept Pédagogique</span>
+      <strong>De l'Observable au Signal Angular</strong>
+    </div>
+    <p>
+      Le <code>PollutionService</code> effectue un appel <code>HttpClient.get()</code> qui produit un
+      <strong><code>Observable&lt;Pollution[]&gt;</code></strong>. Dans le composant, la fonction
+      <strong><code>toSignal()</code></strong> (de <code>&#64;angular/core/rxjs-interop</code>) transforme
+      ce flux en un <strong>Signal réactif</strong> accessible directement dans le template via <code>pollutions()</code>.
+    </p>
+  </div>
+
+  <!-- Statistiques rapides -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <span class="stat-number">{{ pollutions().length }}</span>
+      <span class="stat-label">Mesures enregistrées</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">API Sequelize / Postgres</span>
+      <span class="stat-label">Source des données</span>
+    </div>
+  </div>
+
+  <!-- Section principale : Liste des pollutions -->
+  <section class="card-table-wrapper">
+    <div class="section-header">
+      <h2>Relevés des Pollutions par Ville</h2>
+      <span class="count-tag">{{ pollutions().length }} relevé(s)</span>
+    </div>
+
+    @if (pollutions().length > 0) {
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Ville</th>
+              <th>Polluant</th>
+              <th>Valeur</th>
+              <th>Qualité</th>
+              <th>Date de relevé</th>
+              <th>Description / Contexte</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (p of pollutions(); track p.id) {
+              <tr>
+                <td class="col-id">#{{ p.id }}</td>
+                <td class="col-ville"><strong>{{ p.ville }}</strong></td>
+                <td>
+                  <span class="polluant-badge">{{ p.polluant }}</span>
+                </td>
+                <td class="col-valeur">{{ p.valeur }} µg/m³</td>
+                <td>
+                  <span class="badge" [ngClass]="getBadgeClass(p.valeur)">
+                    {{ getQualityLabel(p.valeur) }}
+                  </span>
+                </td>
+                <td class="col-date">{{ p.date }}</td>
+                <td class="col-desc">{{ p.description || 'N/A' }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Version mobile : Cartes -->
+      <div class="cards-grid-mobile">
+        @for (p of pollutions(); track p.id) {
+          <div class="pollution-card">
+            <div class="card-top">
+              <span class="card-ville">{{ p.ville }}</span>
+              <span class="badge" [ngClass]="getBadgeClass(p.valeur)">
+                {{ getQualityLabel(p.valeur) }}
+              </span>
+            </div>
+            <div class="card-details">
+              <div><strong>Polluant :</strong> <span class="polluant-badge">{{ p.polluant }}</span></div>
+              <div><strong>Valeur :</strong> {{ p.valeur }} µg/m³</div>
+              <div><strong>Date :</strong> {{ p.date }}</div>
+              @if (p.description) {
+                <div class="card-comment">{{ p.description }}</div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <!-- Affichage si chargement ou aucun enregistrement -->
+      <div class="empty-state">
+        <div class="spinner"></div>
+        <p>En attente des données de pollution depuis l'API distante...</p>
+        <small>Vérifiez que le serveur backend Node.js est bien démarré sur le port 3000.</small>
+      </div>
+    }
+  </section>
+</div>
+

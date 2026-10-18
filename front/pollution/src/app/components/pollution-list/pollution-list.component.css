@@ -1,0 +1,304 @@
+.pollution-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: #1f2937;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.header-icon {
+  font-size: 2.8rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.subtitle {
+  margin: 0.35rem 0 0;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* Bannière Pédagogique */
+.pedagogical-banner {
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+  border-left: 5px solid #4f46e5;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.banner-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: #312e81;
+}
+
+.badge-tech {
+  background: #4f46e5;
+  color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.pedagogical-banner p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #374151;
+}
+
+.pedagogical-banner code {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  color: #4338ca;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+/* Barre de statistiques */
+.stats-bar {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.stat-card {
+  flex: 1;
+  background: #ffffff;
+  padding: 1.1rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.stat-label {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Carte & Tableau */
+.card-table-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.count-tag {
+  background: #f3f4f6;
+  color: #4b5563;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f9fafb;
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 0.825rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.data-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.col-id {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.col-valeur {
+  font-weight: 600;
+  color: #111827;
+}
+
+.col-date {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.col-desc {
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+/* Badges */
+.polluant-badge {
+  display: inline-block;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.825rem;
+  border: 1px solid #e5e7eb;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.825rem;
+  font-weight: 600;
+}
+
+.badge-good {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge-moderate {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge-alert {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Empty State & Loader */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: #6b7280;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #e5e7eb;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.cards-grid-mobile {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table-responsive {
+    display: none;
+  }
+
+  .cards-grid-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .pollution-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-ville {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: #4b5563;
+  }
+
+  .card-comment {
+    margin-top: 0.4rem;
+    font-style: italic;
+    color: #6b7280;
+  }
+}
+
