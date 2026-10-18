@@ -37,8 +37,6 @@ services:
   - type: web
     name: pollution-front
     runtime: static
-    plan: free
-    region: oregon
     rootDir: front/pollution
     buildCommand: npm install && npm run build
     staticPublishPath: dist/pollution/browser
