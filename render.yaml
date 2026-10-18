@@ -24,6 +24,8 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NODE_VERSION
+        value: 22.22.3
       - key: PORT
         value: 3000
       - key: DATABASE_URL
@@ -46,5 +48,6 @@ services:
         destination: /index.html
     envVars:
       - key: NODE_VERSION
-        value: 20
+        value: 22.22.3
+
 
