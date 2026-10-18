@@ -34,8 +34,9 @@ services:
   # -------------------------------------------------------------
   # Application Frontend Angular (Site Statique)
   # -------------------------------------------------------------
-  - type: static
+  - type: web
     name: pollution-front
+    runtime: static
     plan: free
     region: oregon
     rootDir: front/pollution
