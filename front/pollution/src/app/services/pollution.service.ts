@@ -13,9 +13,8 @@ export class PollutionService {
   /**
    * Résout l'URL de l'API :
    * 1. Paramètre URL optionnel (?api=https://...)
-   * 2. LocalStorage (si renseigné manuellement via le bouton modifier)
-   * 3. Localhost en développement local
-   * 4. environment.apiUrl configuré pour Render
+   * 2. Localhost en développement local si actif
+   * 3. environment.apiUrl configuré pour la production
    */
   getApiUrl(): string {
     if (typeof window !== 'undefined') {
@@ -25,25 +24,12 @@ export class PollutionService {
         return apiParam.replace(/\/+$/, '');
       }
 
-      const stored = localStorage.getItem('POLLUTION_API_URL');
-      if (stored && stored.trim() !== '') {
-        return stored.trim().replace(/\/+$/, '');
-      }
-
       const origin = window.location.origin;
       if (origin.includes('localhost') || origin.includes('127.0.0.1')) {
         return 'http://localhost:3000/api';
       }
     }
-    return environment.apiUrl.replace(/\/+$/, '');
-  }
-
-  setApiUrl(url: string): void {
-    if (typeof window !== 'undefined') {
-      const clean = url.trim().replace(/\/+$/, '');
-      localStorage.setItem('POLLUTION_API_URL', clean);
-      window.location.reload();
-    }
+    return (environment.apiUrl || 'https://pollution-api-7xsa.onrender.com/api').replace(/\/+$/, '');
   }
 
   /**

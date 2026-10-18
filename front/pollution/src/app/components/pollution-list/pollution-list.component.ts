@@ -30,17 +30,4 @@ export class PollutionListComponent {
     { initialValue: [] as Pollution[] }
   );
 
-  /**
-   * Permet de modifier facilement l'URL de l'API via une boîte de dialogue discrète.
-   */
-  editApiUrl(): void {
-    const current = this.pollutionService.getApiUrl();
-    const promptUrl = window.prompt(
-      "URL de l'API Node.js backend (ex: https://pollution-api-xxxx.onrender.com/api) :",
-      current
-    );
-    if (promptUrl && promptUrl.trim() !== '') {
-      this.pollutionService.setApiUrl(promptUrl);
-    }
-  }
 }

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const rawUrl = process.env.API_URL || 'https://pollution-api.onrender.com';
+const rawUrl = process.env.API_URL || 'https://pollution-api-7xsa.onrender.com';
 const cleanBaseUrl = rawUrl.trim().replace(/\/+$/, '');
 const apiUrl = cleanBaseUrl.endsWith('/api') ? cleanBaseUrl : `${cleanBaseUrl}/api`;
 

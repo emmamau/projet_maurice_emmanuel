@@ -50,10 +50,7 @@ services:
       - key: NODE_VERSION
         value: 22.22.3
       - key: API_URL
-        fromService:
-          type: web
-          name: pollution-api
-          envVarKey: RENDER_EXTERNAL_URL
+        value: https://pollution-api-7xsa.onrender.com
 
 
 
