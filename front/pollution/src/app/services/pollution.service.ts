@@ -11,12 +11,11 @@ export class PollutionService {
   private readonly http = inject(HttpClient);
 
   /**
-   * Résout dynamiquement l'URL de l'API :
+   * Résout l'URL de l'API :
    * 1. Paramètre URL optionnel (?api=https://...)
-   * 2. LocalStorage (si configuré manuellement)
-   * 3. Remplacement automatique sur Render (front -> api)
-   * 4. Localhost (port 3000)
-   * 5. Repli sur environment.apiUrl
+   * 2. LocalStorage (si renseigné manuellement via le bouton modifier)
+   * 3. Localhost en développement local
+   * 4. environment.apiUrl configuré pour Render
    */
   getApiUrl(): string {
     if (typeof window !== 'undefined') {
@@ -32,10 +31,6 @@ export class PollutionService {
       }
 
       const origin = window.location.origin;
-      if (origin.includes('front')) {
-        return `${origin.replace('front', 'api')}/api`;
-      }
-
       if (origin.includes('localhost') || origin.includes('127.0.0.1')) {
         return 'http://localhost:3000/api';
       }
