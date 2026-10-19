@@ -46,7 +46,6 @@ db.sequelize
           { ville: "Nantes", polluant: "CO2", valeur: 12.0, date: "2026-10-18", description: "Conditions atmosphériques favorables" },
           { ville: "Sélestat", polluant: "CO2", valeur: 10.0, date: "2026-10-18", description: "Conditions atmosphériques favorables" }
         ]);
-        ]);
         console.log("Jeu de données initial pour la table pollution inséré avec succès.");
       }
     } catch (seedErr: unknown) {
