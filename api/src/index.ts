@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // health checks
 app.get("/", (_req: Request, res: Response) => {
-  res.json({ message: "Welcome to Pollution API." });
+  res.json({ message: "Welcome to Pollution API !!!" });
 });
 
 app.get("/health", (_req: Request, res: Response) => {
