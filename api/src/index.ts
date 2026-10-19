@@ -43,7 +43,9 @@ db.sequelize
           { ville: "Strasbourg", polluant: "PM10", valeur: 34.2, date: "2026-10-18", description: "Particules en suspension modérées" },
           { ville: "Bordeaux", polluant: "PM2.5", valeur: 15.3, date: "2026-10-16", description: "Bonne qualité globale de l'air" },
           { ville: "Lille", polluant: "NO2", valeur: 38.7, date: "2026-10-17", description: "Trafic dense aux abords de la rocade" },
-          { ville: "Nantes", polluant: "CO2", valeur: 12.0, date: "2026-10-18", description: "Conditions atmosphériques favorables" }
+          { ville: "Nantes", polluant: "CO2", valeur: 12.0, date: "2026-10-18", description: "Conditions atmosphériques favorables" },
+          { ville: "Sélestat", polluant: "CO2", valeur: 10.0, date: "2026-10-18", description: "Conditions atmosphériques favorables" }
+        ]);
         ]);
         console.log("Jeu de données initial pour la table pollution inséré avec succès.");
       }
